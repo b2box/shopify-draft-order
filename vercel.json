@@ -1,5 +1,8 @@
-echo '{
-    "rewrites": [
-      { "source": "/api/draft-order", "destination": "/api/draft-order" }
-    ]
-  }' > vercel.json
+{
+  "rewrites": [
+    {
+      "source": "/api/draft-order",
+      "destination": "/api/draft-order"
+    }
+  ]
+}
