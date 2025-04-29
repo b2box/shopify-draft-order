@@ -1,6 +1,16 @@
 const axios = require("axios");
 
 module.exports = async (req, res) => {
+  // Configurar encabezados CORS para permitir solicitudes desde tu dominio
+  res.setHeader('Access-Control-Allow-Origin', 'https://www.b2-box.com');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+  // Manejar la solicitud OPTIONS (preflight)
+  if (req.method === 'OPTIONS') {
+    return res.status(200).json({});
+  }
+
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
   }
